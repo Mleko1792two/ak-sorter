@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+  <link rel="shortcut icon" href="src/assets/eyja.ico" type="image/x-icon">
+  <link rel="icon" href="src/assets/eyja.ico" type="image/x-icon">
+  <meta charset="utf-8">
+  <meta name="og:site_name" content="Arknights Operator Sorting">
+  <meta name="og:description" content="A simple website for sorting Arknights operators in a formatted list.">
+  <meta name="og:image" content="https://i.imgur.com/RDNHkF1.jpg">
+  <title>Arknights Operator Sorting</title>
+
+  <link rel="stylesheet" type="text/css" href="src/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="src/css/styles.css">
+
+  <script src="src/js/data.js"></script>
+  <script src="src/js/data/2024-08-21.js"></script>
+  <script src="src/js/data/2024-08-22.js"></script>
+  <script src="src/js/data/2024-08-23.js"></script>
+  <script src="src/js/data/2024-09-02.js"></script>
+  <script src="src/js/data/2024-10-09.js"></script>
+  <script src="src/js/data/2024-11-01.js"></script>
+  <script src="src/js/data/2024-11-17.js"></script>
+  <script src="src/js/data/2024-12-05.js"></script>
+  <script src="src/js/data/2025-01-26.js"></script>
+  
+  <script src="src/js/html2canvas.min.js"></script>
+  <script src="src/js/lz-string.min.js"></script>
+  <script src="src/js/seedrandom.min.js"></script>
+  <script src="src/js/main.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="progress">
+        <span class="progressbattle"></span>
+        <div class="progressbar">
+            <div class="progressfill"><span class="progresstext"></span></div>
+        </div>
+    </div>
+
+    <div class="sorter">
+        <img src="src/assets/defaultL.jpg" class="left sort image">
+
+        <div class="starting start button">Arknights Operator Sorter<br><br>Click to Start!</div>
+        <div class="starting load button">Load <span></span></div>
+
+        <div class="loading button"><div></div><span>Loading...</span></div>
+
+        <div class="sorting undo button">Undo</div>
+        <div class="sorting save button">Save Progress</div>
+
+        <div class="finished save button">Generate Result URL</div>
+        <div class="finished getimg button">Generate Image</div>
+        <div class="finished list button">Generate Text List</div>
+
+        <img src="src/assets/defaultR.jpg" class="right sort image">
+
+        <div class="left sort text"><p></p></div>
+        <div class="right sort text"><p></p></div>
+    </div>
+
+    <div class="options"></div>
+    <div class="image selector">Display Images on Result: </div>
+    <div class="time taken"></div>
+    <div class="results"></div>
+
+    <div class="info">
+        <p>@ppeeaa on Discord</p> <a href="https://github.com/execfera/charasort/">Source Code</a> | <a href="?IwdgTAHAbAnDCsAGRI4B94BZEwvEEawyxJpxw5Fi1Nl1lZd9ZpNrDJHnFjyd7PuQEiurZsxb9JbPtP6Nag4VwaKFtYb1UCWmjk0HsRW+nqPH96mdKGGmUsXPOrFm7U4NDvTnh7MOYjqiPvIKEmqulnY6Zs4ynEbmbCYSvhaSGjYaVNFyDrmBmUpu4uEmHrqJOYWZhs4qvAGypcZBYU1x9mWueuqJKQZZdd5U8V3ySpbTaWkNQX11M62zzeKVVdHl7T2BcY7V+2HZtW1dE7YpR5dj9eEtTd0Byqf7gy+2xTfbUle-7wk3kD8vdvpdJrJ1to1A0phDge9HMcTvkHqjrmDwfCHvcLjc+rdTsjiTUEf8ESSltjgdtuFTqWisWNOh1mazgGhAkA">Best Taste</a> | <a class="clearsave">Clear Save Data</a>
+        
+        <br><br>
+
+        <p>Sorter for Arknights characters. Pick your sources, and hit the Start button.</p>
+        <p><strong>Certain options have details that you can hover to read.</strong></p>
+        <p>Click on the character you like better from the two.</p>
+        <p>Depending on how many sources you pick, you'll get up to 2000+ picks, so set aside a good few cups of tea for this.</p>
+
+        <br><br>
+
+        <p>Keyboard controls during sorting: J (pick left) K (undo) L (pick right) S (save progress).</p>
+        <p>Before sorting: S/Enter (start sorting) L (load progress).
+        <p>1/2 always correspond to the first/second buttons.</p>
+        
+        <br><br>
+
+        <p>Inspired by <a href="http://mainyan.sakura.ne.jp/thsort.html">this site</a> (dead link). Splash Art: <a href="https://www.pixiv.net/en/artworks/103588201">枝垂</a>.</p>
+
+        <br><br>
+        <p>January 26th, 2025 - Added <spoiler>Such is the Joy of Our Reunion</spoiler> (CN) and moved Adventure That Cannot Wait for the Sun to Global</p> 
+        <p>December 5th, 2024 - Added <spoiler>Exodus From the Pale Sea</spoiler> (CN) and moved Path of Life to Global</p> 
+        <p>December 2nd, 2024 - Fixed results image generation being cut off when there were too many operators/images selected</p> 
+        <p>November 17th, 2024 - Added an Unobtainable category for reserve/elite operators exclusive to gamemodes like IS</p> 
+        <p>November 1st, 2024 - Added <spoiler>I Portatori dei Velluti</spoiler> (CN) and moved Absolved Will Be the Seekers to Global</p> 
+        <p>October 9th, 2024 - Added <spoiler>Ending a Grand Overture</spoiler> (CN) and moved Babel to Global</p> 
+        <p>September 2nd, 2024 - Added <spoiler>Delicious on Terra</spoiler> (CN) and moved Operation Lucent Arrowhead to Global</p>        
+        <p>August 23rd, 2024 - Added "remove women" filter</p>
+        <p>August 21st, 2024 - Release</p>
+    </div>
+</div>
+</body>
+
+</html>
